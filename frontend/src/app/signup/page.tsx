@@ -11,10 +11,10 @@ export default function SignupPage() {
         {/* Heading */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-semibold tracking-tight">
-            Create Account
+            Sign Up
           </h1>
           <p className="text-md text-gray-400">
-            Join OpenAlpha to collaborate on investment strategies.
+            Create your OpenAlpha account.
           </p>
         </div>
 

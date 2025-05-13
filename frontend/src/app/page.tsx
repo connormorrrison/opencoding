@@ -13,7 +13,7 @@ export default function Home() {
         <div className="absolute top-5 right-5 flex space-x-4">
           <Link href="/login">
             <Button className="text-base">
-              Login
+              Log In
             </Button>
           </Link>
           <Link href="/signup">
