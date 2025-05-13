@@ -1,0 +1,58 @@
+/* Black backdrop */
+.wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    background: #000;
+  }
+  
+  /* Centers the SVG and lets it overflow horizontally */
+  .canvas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 300%;
+    height: 480px;
+    transform: translateY(-50%);
+  }
+  
+  /* Common stroke look */
+  .path {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* Animation properties will be set via JavaScript */
+  }
+  
+  /* Primary path - main focus */
+  .pathPrimary {
+    stroke: #004300; /* Bright green */
+    filter: drop-shadow(0 0 6px #004300);
+    stroke-width: 3;
+    opacity: 0.9;
+  }
+  
+  /* Secondary path - more volatile */
+  .pathSecondary {
+    stroke: #158106; /* Blue */
+    filter: drop-shadow(0 0 6px #158106);
+    stroke-width: 3;
+    opacity: 0.7;
+  }
+  
+  /* Tertiary path - steady uptrend */
+  .pathTertiary {
+    stroke: #21471a; /* Pink */
+    filter: drop-shadow(0 0 6px #21471a);
+    stroke-width: 3;
+    opacity: 0.5;
+  }
+  
+  /* Keyframes for the dash-offset animation */
+  @keyframes drawFlow {
+    0% { stroke-dashoffset: var(--len); }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: calc(-1 * var(--len)); }
+  }
