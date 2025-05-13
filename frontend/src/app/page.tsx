@@ -1,11 +1,31 @@
-import React from "react"
+"use client"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import LandingPageBackground from "@/components/landing-page-background"
 import Header from "@/components/header"
 import SlideUp from "@/components/slide-up"
 
+const WORDS = [
+  "Collaboration", // people align first
+  "Discovery",     // explore data and context
+  "Analysis",      // examine patterns
+  "Insights",      // surface key findings
+  "Strategy",      // set high-level direction
+  "Planning",      // map concrete steps
+  "Simulation",    // test scenarios
+  "Optimization"   // refine for best results
+]
+
 export default function Home() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const intervalId = setInterval(() => setIndex(i => (i + 1) % WORDS.length), 3000)
+    return () => clearInterval(intervalId)
+  }, [])
+
   return (
     <LandingPageBackground>
       <div className="min-h-screen relative text-white">
@@ -15,9 +35,7 @@ export default function Home() {
         </div>
         <div className="absolute top-5 right-5 flex space-x-4 z-50">
           <Link href="/login">
-            <Button className="text-base">
-              Log In
-            </Button>
+            <Button className="text-base">Log In</Button>
           </Link>
           <Link href="/signup">
             <Button className="text-base bg-green-600 hover:bg-green-700">
@@ -32,11 +50,29 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
               <div className="max-w-2xl text-center space-y-4">
-                <h1 className="text-6xl font-medium">
-                  Finance Collaboration in Real Time with AI
-                </h1>
+              <div className="text-6xl font-medium leading-tight text-center">
+              <div>Real-Time Financial</div>
+              <div className="whitespace-nowrap h-[72px]">
+                <span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={WORDS[index]}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4 }}
+                      className="inline-block"
+                    >
+                      {WORDS[index]}
+                    </motion.span>
+                  </AnimatePresence>{" "}
+                  with AI
+                </span>
+              </div>
+            </div>
+
                 <p className="text-base text-gray-100 mt-6">
-                  Collaborate on investment strategies and get AI-powered insights in real time.
+                  Collaborate on investment strategies and get AI-powered insights in real-time.
                 </p>
                 <div className="flex space-x-4 justify-center mt-4">
                   <Button className="text-base bg-green-600 hover:bg-green-700 text-white">
