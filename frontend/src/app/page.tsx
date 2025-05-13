@@ -7,6 +7,7 @@ import LandingPageBackground from "@/components/landing-page-background"
 import Header from "@/components/header"
 import SlideUp from "@/components/slide-up"
 import { Users, Brain, Rocket } from "lucide-react"
+import { Faq1 } from "@/components/faq1"
 
 const WORDS = ["Collaborate", "Brainstorm", "Develop", "Ship"]
 
@@ -22,12 +23,12 @@ export default function Home() {
     <LandingPageBackground>
       <div className="min-h-screen relative text-white">
         {/* Header */}
-        <div className="relative z-50">
+        <div className="fixed top-0 left-0 right-0 z-50">
           <Header />
         </div>
 
         {/* Auth links */}
-        <div className="absolute top-5 right-5 flex space-x-4 z-50">
+        <div className="fixed top-5 right-5 flex space-x-4 z-50">
           <Link href="/login">
             <Button className="text-base">Log In</Button>
           </Link>
@@ -39,7 +40,7 @@ export default function Home() {
         </div>
 
         {/* Page content */}
-        <main className="flex-1 flex items-center justify-center pt-62">
+        <main className="flex-1 pt-60">
           <SlideUp>
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
@@ -78,7 +79,7 @@ export default function Home() {
               </div>
 
               {/* Features */}
-              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
                 <div className="p-5 bg-black border border-gray-700 rounded-lg">
                   <Users className="h-7 w-7 text-indigo-700 mb-4" />
                   <h3 className="text-lg font-medium">Pair Programming</h3>
@@ -106,6 +107,9 @@ export default function Home() {
             </div>
           </SlideUp>
         </main>
+
+        {/* FAQ Section */}
+        <Faq1 />
       </div>
     </LandingPageBackground>
   )
