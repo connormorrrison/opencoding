@@ -1,11 +1,13 @@
 import React from "react";
-import Header from "@/components/header"; // Assuming your Header component is in this path
+import Header from "@/components/header";
+import SlideUp from "@/components/slide-up";
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white p-4 relative">
       <Header />
 
+      <SlideUp>
       {/* Card */}
       <div className="w-full max-w-md space-y-8">
         {/* Heading */}
@@ -90,6 +92,7 @@ export default function LoginPage() {
           </a>
         </p>
       </div>
+    </SlideUp>
     </div>
   );
 }

@@ -1,11 +1,13 @@
-import React from "react"
-import Header from "@/components/header"
+import React from "react";
+import Header from "@/components/header";
+import SlideUp from "@/components/slide-up";
 
 export default function SignupPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white p-4 relative">
       <Header />
 
+      <SlideUp>
       {/* Card */}
       <div className="w-full max-w-md space-y-8">
         {/* Heading */}
@@ -117,6 +119,7 @@ export default function SignupPage() {
           </a>
         </p>
       </div>
+    </SlideUp>
     </div>
   )
 }
