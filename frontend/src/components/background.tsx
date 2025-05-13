@@ -26,7 +26,7 @@ export default function Background({ children }: PropsWithChildren<{}>) {
       path2.style.setProperty("--len", `${length2}`);
       path2.style.strokeDasharray = `${length2}`;
       path2.style.strokeDashoffset = `${length2}`;
-      const seconds2 = length2 / 400; // Faster speed
+      const seconds2 = length2 / 500; // Faster speed
       path2.style.animation = `${styles.drawFlow} ${seconds2}s linear infinite`;
     }
     
@@ -37,7 +37,7 @@ export default function Background({ children }: PropsWithChildren<{}>) {
       path3.style.setProperty("--len", `${length3}`);
       path3.style.strokeDasharray = `${length3}`;
       path3.style.strokeDashoffset = `${length3}`;
-      const seconds3 = length3 / 500; // Slower speed
+      const seconds3 = length3 / 400; // Slower speed
       path3.style.animation = `${styles.drawFlow} ${seconds3}s linear infinite`;
     }
   }, []);

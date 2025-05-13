@@ -37,7 +37,7 @@ export default function Home() {
             {/* Hero */}
             <div className="max-w-2xl text-center space-y-4">
               <h1 className="text-6xl font-medium">
-                Collaborate in Real Time with AI
+                Finance Collaboration in Real Time with AI
               </h1>
               <p className="text-base text-gray-100 mt-6">
                 Collaborate on investment strategies and get AI-powered insights in real time.
@@ -61,7 +61,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="p-4 bg-gray-950 border border-gray-800 bg-opacity-50 rounded-lg">
-                <h3 className="text-lg font-medium">AI-Driven Insights</h3>
+                <h3 className="text-lg font-medium">AI Insights</h3>
                 <p className="text-base text-gray-300">
                   Receive smart recommendations, risk alerts and optimization tips as you plan.
                 </p>
