@@ -32,7 +32,7 @@ export default function SignupPage() {
               autoComplete="given-name"
               required
               placeholder="First Name"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -48,7 +48,7 @@ export default function SignupPage() {
               autoComplete="family-name"
               required
               placeholder="Last Name"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function SignupPage() {
               autoComplete="email"
               required
               placeholder="Email"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -80,7 +80,7 @@ export default function SignupPage() {
               autoComplete="new-password"
               required
               placeholder="Password"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -96,14 +96,14 @@ export default function SignupPage() {
               autoComplete="new-password"
               required
               placeholder="Confirm Password"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500"
+              className="block w-full rounded-md border-0 bg-white/5 py-3 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
           {/* Submit */}
           <button
             type="submit"
-            className="w-full rounded-md bg-green-600 py-2.5 text-base font-semibold shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+            className="w-full rounded-md bg-green-600 py-3 text-base font-semibold shadow-sm hover:bg-green-700"
           >
             Sign Up
           </button>
