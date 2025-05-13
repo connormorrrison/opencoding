@@ -16,7 +16,7 @@ export default function LoginPage() {
             Log In
           </h1>
           <p className="text-md text-gray-400">
-            Access your OpenAlpha account.
+            Access your OpenCoding account.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function LoginPage() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-green-600 hover:text-green-700"
+                className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-indigo-700 hover:text-indigo-800"
               />
               <label htmlFor="remember-me" className="ml-2 block text-base text-gray-400">
                 Remember me
@@ -69,7 +69,7 @@ export default function LoginPage() {
             </div>
 
             <div className="text-base">
-              <a href="/forgot-password" className="font-semibold text-green-600 hover:text-green-700">
+              <a href="/forgot-password" className="font-semibold text-indigo-700 hover:text-indigo-800">
                 Forgot password?
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function LoginPage() {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full rounded-md bg-green-600 py-3 text-base font-semibold shadow-sm hover:bg-green-700"
+            className="w-full rounded-md bg-indigo-700 py-3 text-base font-semibold shadow-sm hover:bg-indigo-800"
           >
             Log In
           </button>
@@ -87,7 +87,7 @@ export default function LoginPage() {
         {/* Footer link */}
         <p className="text-center text-base text-gray-400">
           Not a member?{" "}
-          <a href="/signup" className="font-semibold text-green-600 hover:text-green-700">
+          <a href="/signup" className="font-semibold text-indigo-700 hover:text-indigo-800">
             Sign up
           </a>
         </p>

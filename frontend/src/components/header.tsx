@@ -7,8 +7,8 @@ export default function Header() {
       <div className="absolute top-6 left-6">
         <Link href="/" className="px-1 py-1 text-xl">
           <span className="text-white">Open</span>
-          <span className="text-green-500">
-            Alpha<sup className="text-base">α</sup>
+          <span className="text-indigo-700">
+            Coding<sup className="text-base"></sup>
           </span>
         </Link>
       </div>

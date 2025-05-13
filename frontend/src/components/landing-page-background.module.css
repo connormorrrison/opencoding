@@ -28,7 +28,7 @@
   
   /* Primary path - main focus */
   .pathPrimary {
-    stroke: #004300; /* Bright green */
+    stroke: rgb(65, 46, 207); /* Bright green */
     filter: drop-shadow(0 0 6px #004300);
     stroke-width: 3;
     opacity: 0.9;
@@ -36,7 +36,7 @@
   
   /* Secondary path - more volatile */
   .pathSecondary {
-    stroke: #158106; /* Blue */
+    stroke: rgba(65, 46, 207, 0.712); /* Blue */
     filter: drop-shadow(0 0 6px #158106);
     stroke-width: 3;
     opacity: 0.7;
@@ -44,7 +44,7 @@
   
   /* Tertiary path - steady uptrend */
   .pathTertiary {
-    stroke: #21471a; /* Pink */
+    stroke: rgba(65, 46, 207, 0.43); /* Pink */
     filter: drop-shadow(0 0 6px #21471a);
     stroke-width: 3;
     opacity: 0.5;

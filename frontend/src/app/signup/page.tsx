@@ -16,7 +16,7 @@ export default function SignupPage() {
             Sign Up
           </h1>
           <p className="text-md text-gray-400">
-            Create your OpenAlpha account.
+            Create your OpenCoding account.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function SignupPage() {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full rounded-md bg-green-600 py-3 text-base font-semibold shadow-sm hover:bg-green-700"
+            className="w-full rounded-md bg-indigo-700 py-3 text-base font-semibold shadow-sm hover:bg-indigo-800"
           >
             Sign Up
           </button>
@@ -114,7 +114,7 @@ export default function SignupPage() {
         {/* Footer link */}
         <p className="text-center text-base text-gray-400">
           Already a member?{" "}
-          <a href="/login" className="font-semibold text-green-600 hover:text-green-700">
+          <a href="/login" className="font-semibold text-indigo-700 hover:text-indigo-800">
             Log in
           </a>
         </p>

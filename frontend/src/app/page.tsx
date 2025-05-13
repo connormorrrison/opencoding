@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button"
 import LandingPageBackground from "@/components/landing-page-background"
 import Header from "@/components/header"
 import SlideUp from "@/components/slide-up"
+import {
+  Users,
+  Brain,
+  BarChart4
+} from "lucide-react"
+
 
 const WORDS = [
   "Collaboration", // people align first
@@ -38,20 +44,20 @@ export default function Home() {
             <Button className="text-base">Log In</Button>
           </Link>
           <Link href="/signup">
-            <Button className="text-base bg-green-600 hover:bg-green-700">
+            <Button className="text-base bg-indigo-700 hover:bg-indigo-800">
               Sign Up
             </Button>
           </Link>
         </div>
 
         {/* Page content */}
-        <main className="flex-1 flex items-center justify-center pt-64">
+        <main className="flex-1 flex items-center justify-center pt-62">
           <SlideUp>
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
               <div className="max-w-2xl text-center space-y-4">
               <div className="text-6xl font-medium leading-tight text-center">
-              <div>Real-Time Financial</div>
+              <div>Real-Time Coding</div>
               <div className="whitespace-nowrap h-[72px]">
                 <span>
                   <AnimatePresence mode="wait">
@@ -72,10 +78,10 @@ export default function Home() {
             </div>
 
                 <p className="text-base text-gray-100 mt-6">
-                  Collaborate on investment strategies and get AI-powered insights in real-time.
+                  Collaborate on software development and get AI-powered insights in real-time.
                 </p>
                 <div className="flex space-x-4 justify-center mt-4">
-                  <Button className="text-base bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="text-base bg-indigo-700 hover:bg-indigo-800 text-white">
                     Get Started
                   </Button>
                   <Button className="text-white text-base border-gray-300 hover:text-gray-300">
@@ -85,26 +91,30 @@ export default function Home() {
               </div>
 
               {/* Features */}
-              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-36">
-                <div className="p-4 bg-gray-950 border border-gray-800 bg-opacity-50 rounded-lg">
-                  <h3 className="text-lg font-medium">Shared Dashboards</h3>
+              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+                <div className="p-5 bg-black border border-gray-700 rounded-lg">
+                  <Users className="h-7 w-7 text-indigo-700 mb-4" />
+                  <h3 className="text-lg font-medium">Collaborative Portfolios</h3>
                   <p className="text-base text-gray-300">
-                    Build and review portfolio views together. Track holdings, allocations and performance.
+                    Explore, build, and monitor portfolios as a team. Share ideas and track real-time performance together.
                   </p>
                 </div>
-                <div className="p-4 bg-gray-950 border border-gray-800 bg-opacity-50 rounded-lg">
-                  <h3 className="text-lg font-medium">AI Insights</h3>
+                <div className="p-5 bg-black border border-gray-700 rounded-lg">
+                  <Brain className="h-7 w-7 text-indigo-700 mb-4" />
+                  <h3 className="text-lg font-medium">AI Investment Intelligence</h3>
                   <p className="text-base text-gray-300">
-                    Receive smart recommendations, risk alerts and optimization tips as you plan.
+                    Surface relevant insights, identify opportunities, and get smarter about your next move.
                   </p>
                 </div>
-                <div className="p-4 bg-gray-950 border border-gray-800 bg-opacity-50 rounded-lg">
-                  <h3 className="text-lg font-medium">Scenario Simulation</h3>
+                <div className="p-5 bg-black border border-gray-700 rounded-lg">
+                  <BarChart4 className="h-7 w-7 text-indigo-700 mb-4" />
+                  <h3 className="text-lg font-medium">What-If Modeling</h3>
                   <p className="text-base text-gray-300">
-                    Model market scenarios and forecast outcomes before making decisions.
+                    Run simulations to see how strategies might perform. Stress test ideas before acting.
                   </p>
                 </div>
               </div>
+
             </div>
           </SlideUp>
         </main>
