@@ -32,7 +32,7 @@ export default function LoginPage() {
               autoComplete="email"
               required
               placeholder="Email"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:leading-6"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -48,7 +48,7 @@ export default function LoginPage() {
               autoComplete="current-password"
               required
               placeholder="Password"
-              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:leading-6"
+              className="block w-full rounded-md border-0 bg-white/5 py-2 px-3 text-white shadow-sm ring-1 ring-inset ring-white/10"
             />
           </div>
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-green-600 focus:ring-green-500"
+                className="h-4 w-4 rounded border-gray-600 bg-gray-700 text-green-600 hover:text-green-700"
               />
               <label htmlFor="remember-me" className="ml-2 block text-base text-gray-400">
                 Remember me
@@ -67,7 +67,7 @@ export default function LoginPage() {
             </div>
 
             <div className="text-base">
-              <a href="/forgot-password" className="font-semibold text-green-400 hover:text-green-300">
+              <a href="/forgot-password" className="font-semibold text-green-600 hover:text-green-700">
                 Forgot password?
               </a>
             </div>
@@ -85,7 +85,7 @@ export default function LoginPage() {
         {/* Footer link */}
         <p className="text-center text-base text-gray-400">
           Not a member?{" "}
-          <a href="/signup" className="font-semibold text-green-400 hover:text-green-300">
+          <a href="/signup" className="font-semibold text-green-600 hover:text-green-700">
             Sign up
           </a>
         </p>
