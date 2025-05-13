@@ -1,20 +1,10 @@
 import React from "react"
-import Link from "next/link"
+import Header from "@/components/header"
 
 export default function SignupPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white p-4 relative">
-      {/* Header */}
-      <header className="absolute top-0 left-0 right-0 h-20">
-        <div className="absolute top-6 left-6">
-          <Link href="/" className="px-1 py-1 text-xl">
-            <span className="text-white">Open</span>
-            <span className="text-green-500">
-              Alpha<sup className="text-base">α</sup>
-            </span>
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Card */}
       <div className="w-full max-w-md space-y-8">
@@ -32,10 +22,7 @@ export default function SignupPage() {
         <form className="space-y-6">
           {/* First Name */}
           <div className="space-y-2">
-            <label
-              htmlFor="firstName"
-              className="block text-base font-medium text-gray-300"
-            >
+            <label htmlFor="firstName" className="block text-base font-medium text-gray-300">
               First Name*
             </label>
             <input
@@ -51,10 +38,7 @@ export default function SignupPage() {
 
           {/* Last Name */}
           <div className="space-y-2">
-            <label
-              htmlFor="lastName"
-              className="block text-base font-medium text-gray-300"
-            >
+            <label htmlFor="lastName" className="block text-base font-medium text-gray-300">
               Last Name*
             </label>
             <input
@@ -70,10 +54,7 @@ export default function SignupPage() {
 
           {/* Email */}
           <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="block text-base font-medium text-gray-300"
-            >
+            <label htmlFor="email" className="block text-base font-medium text-gray-300">
               Email*
             </label>
             <input
@@ -89,10 +70,7 @@ export default function SignupPage() {
 
           {/* Password */}
           <div className="space-y-2">
-            <label
-              htmlFor="password"
-              className="block text-base font-medium text-gray-300"
-            >
+            <label htmlFor="password" className="block text-base font-medium text-gray-300">
               Password*
             </label>
             <input
@@ -108,10 +86,7 @@ export default function SignupPage() {
 
           {/* Confirm Password */}
           <div className="space-y-2">
-            <label
-              htmlFor="confirmPassword"
-              className="block text-base font-medium text-gray-300"
-            >
+            <label htmlFor="confirmPassword" className="block text-base font-medium text-gray-300">
               Confirm Password*
             </label>
             <input
@@ -137,10 +112,7 @@ export default function SignupPage() {
         {/* Footer link */}
         <p className="text-center text-base text-gray-400">
           Already a member?{" "}
-          <a
-            href="/login"
-            className="font-semibold text-green-400 hover:text-green-300"
-          >
+          <a href="/login" className="font-semibold text-green-400 hover:text-green-300">
             Log in
           </a>
         </p>

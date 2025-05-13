@@ -2,34 +2,26 @@ import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import LandingPageBackground from "@/components/landing-page-background"
+import Header from "@/components/header"
 
 export default function Home() {
   return (
     <LandingPageBackground>
       <div className="min-h-screen relative text-white">
         {/* Header */}
-        <header className="absolute top-0 left-0 right-0 h-20">
-          <div className="absolute top-6 left-6">
-            <Link href="/" className="px-1 py-1 text-xl">
-              <span className="text-white">Open</span>
-              <span className="text-green-500">
-                Alpha<sup className="text-base">α</sup>
-              </span>
-            </Link>
-          </div>
-          <div className="absolute top-5 right-5 flex space-x-4">
-            <Link href="/login">
-              <Button className="text-base">
-                Login
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button className="text-base bg-green-600 hover:bg-green-700">
-                Sign Up
-              </Button>
-            </Link>
-          </div>
-        </header>
+        <Header />
+        <div className="absolute top-5 right-5 flex space-x-4">
+          <Link href="/login">
+            <Button className="text-base">
+              Login
+            </Button>
+          </Link>
+          <Link href="/signup">
+            <Button className="text-base bg-green-600 hover:bg-green-700">
+              Sign Up
+            </Button>
+          </Link>
+        </div>
 
         {/* Page content */}
         <main className="flex-1 flex items-center justify-center pt-64">
