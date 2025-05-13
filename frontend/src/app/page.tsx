@@ -1,11 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import Background from "@/components/background"
+import LandingPageBackground from "@/components/landing-page-background"
 
 export default function Home() {
   return (
-    <Background>
+    <LandingPageBackground>
       <div className="min-h-screen relative text-white">
         {/* Header */}
         <header className="absolute top-0 left-0 right-0 h-20">
@@ -76,6 +76,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-    </Background>
+    </LandingPageBackground>
   )
 }

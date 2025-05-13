@@ -1,8 +1,8 @@
 "use client";
 import React, { PropsWithChildren, useEffect, useRef } from "react";
-import styles from "./background.module.css";
+import styles from "./landing-page-background.module.css";
 
-export default function Background({ children }: PropsWithChildren<{}>) {
+export default function LandingPageBackground({ children }: PropsWithChildren<{}>) {
   const pathRef1 = useRef<SVGPathElement>(null);
   const pathRef2 = useRef<SVGPathElement>(null);
   const pathRef3 = useRef<SVGPathElement>(null);
