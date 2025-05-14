@@ -74,7 +74,7 @@ export default function Home() {
                 </div>
 
                 <p className="mt-6 text-base text-gray-100">
-                  Build software together and get AI-powered insights without losing flow.
+                  Build software together and get AI-powered insights without losing focus.
                 </p>
 
                 <div className="mt-4 flex justify-center space-x-4">
@@ -89,7 +89,7 @@ export default function Home() {
 
               {/* Features */}
               <div className="mt-20 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
-                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_300px_rgba(64,46,207,0.2)]">
                   <Users className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">Pair Programming</h3>
                   <p className="text-base text-gray-300">
@@ -97,7 +97,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_300px_rgba(64,46,207,0.2)]">
                   <Brain className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">AI Code Assistance</h3>
                   <p className="text-base text-gray-300">
@@ -105,7 +105,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_300px_rgba(64,46,207,0.2)]">
                   <Rocket className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">Instant Deploys</h3>
                   <p className="text-base text-gray-300">

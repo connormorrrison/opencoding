@@ -48,7 +48,7 @@ const Faq1 = ({
 }: Faq1Props) => {
   return (
     <section className="py-32">
-      <div className="max-w-3xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto text-base shadow-[0_0_700px_rgba(64,46,207,0.5)] px-8 py-8 bg-black rounded-xl border border-gray-600">
         <h1 className="mb-4 text-3xl font-semibold md:mb-11 md:text-4xl">
           {heading}
         </h1>
