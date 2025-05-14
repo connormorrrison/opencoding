@@ -50,19 +50,22 @@ export default function LandingPageBackground({ children }: PropsWithChildren<{}
           viewBox="0 0 6000 480"
           preserveAspectRatio="none"
         >
-          {/* Main curve - moderate volatility with uptrend */}
+          {/* Main curve – moderate volatility with a stronger uptrend */}
           <path
             ref={pathRef1}
             className={`${styles.path} ${styles.pathPrimary}`}
-            d="M0 320
-               C300 200 600 200 900 320
-               S1500 440 1800 320
-               S2400 200 2700 320
-               S3300 440 3600 320
-               S4200 200 4500 270
-               S5100 400 5400 250
-               S6000 150 6300 100"
+            d="
+              M0 320
+              C300 200 600 200 900 300
+              S1500 420 1800 280
+              S2400 200 2700 280
+              S3300 420 3600 280
+              S4200 200 4500 240
+              S5100 380 5400 230
+              S6000 120 6300 80
+            "
           />
+
           
           {/* Second curve - more volatile with steeper uptrend */}
           <path

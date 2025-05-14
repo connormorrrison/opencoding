@@ -1,42 +1,50 @@
-"use client"
-import React, { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import LandingPageBackground from "@/components/landing-page-background"
-import Header from "@/components/header"
-import SlideUp from "@/components/slide-up"
-import ScrollFade from "@/components/scroll-fade"
-import { Users, Brain, Rocket } from "lucide-react"
-import { Faq1 } from "@/components/faq1"
+"use client";
 
-const WORDS = ["Collaborate", "Brainstorm", "Develop", "Ship"]
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import LandingPageBackground from "@/components/landing-page-background";
+import Header from "@/components/header";
+import SlideUp from "@/components/slide-up";
+import ScrollFade from "@/components/scroll-fade";
+import { Users, Brain, Rocket } from "lucide-react";
+import { Faq1 } from "@/components/faq1";
+
+const WORDS = [
+  "Collaborate",
+  "Brainstorm",
+  "Develop",
+  "Test",
+  "Debug",
+  "Review",
+  "Automate",
+  "Ship",
+];
 
 export default function Home() {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex(i => (i + 1) % WORDS.length), 3000)
-    return () => clearInterval(id)
-  }, [])
+    const id = setInterval(() => setIndex((i) => (i + 1) % WORDS.length), 3000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <LandingPageBackground>
-      <div className="min-h-screen relative text-white">
+      <div className="relative min-h-screen text-white">
         {/* Header */}
-        <div className="fixed top-0 left-0 right-0 z-50">
+        <div className="fixed inset-x-0 top-0 z-50">
           <Header />
         </div>
 
         {/* Auth links */}
-        <div className="fixed top-5 right-5 flex space-x-4 z-50">
+        <div className="fixed right-5 top-5 z-50 flex space-x-4">
           <Link href="/login">
             <Button className="text-base">Log In</Button>
           </Link>
           <Link href="/signup">
-            <Button className="text-base bg-indigo-700 hover:bg-indigo-800">
-              Sign Up
-            </Button>
+            <Button className="bg-indigo-700 text-base hover:bg-indigo-800">Sign Up</Button>
           </Link>
         </div>
 
@@ -45,9 +53,9 @@ export default function Home() {
           <SlideUp>
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
-              <div className="max-w-2xl text-center space-y-4">
+              <div className="max-w-2xl space-y-4 text-center">
                 <div className="text-6xl font-medium leading-tight drop-shadow-lg">
-                  <div className="whitespace-nowrap h-[72px]">
+                  <div className="h-[72px] whitespace-nowrap">
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={WORDS[index]}
@@ -55,50 +63,50 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.4 }}
-                        className="inline-block"
+                        className="inline-block rounded-xl border border-indigo-950 px-2 py-2 shadow-[0_0_200px_rgba(64,46,207,0.9)]"
                       >
                         {WORDS[index]}
                       </motion.span>
                     </AnimatePresence>{" "}
                     in Real-Time
                   </div>
-                  <div>with AI</div>
+                  <div className="mt-4">with AI</div>
                 </div>
 
-                <p className="text-base text-gray-100 mt-6">
+                <p className="mt-6 text-base text-gray-100">
                   Build software together and get AI-powered insights without losing flow.
                 </p>
 
-                <div className="flex space-x-4 justify-center mt-4">
-                  <Button className="text-base bg-indigo-700 hover:bg-indigo-800">
+                <div className="mt-4 flex justify-center space-x-4">
+                  <Button className="bg-indigo-700 text-base hover:bg-indigo-800">
                     Get Started
                   </Button>
-                  <Button className="text-white text-base border-gray-300 hover:text-gray-300">
+                  <Button className="border-gray-300 text-base text-white hover:text-gray-300">
                     Watch Demo
                   </Button>
                 </div>
               </div>
 
               {/* Features */}
-              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-                <div className="p-5 bg-black border border-gray-700 rounded-lg">
-                  <Users className="h-7 w-7 text-indigo-700 mb-4" />
+              <div className="mt-20 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                  <Users className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">Pair Programming</h3>
                   <p className="text-base text-gray-300">
                     Code together in real time and stay in sync across your team.
                   </p>
                 </div>
 
-                <div className="p-5 bg-black border border-gray-700 rounded-lg">
-                  <Brain className="h-7 w-7 text-indigo-700 mb-4" />
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                  <Brain className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">AI Code Assistance</h3>
                   <p className="text-base text-gray-300">
                     Get smart suggestions, refactors, and docs generation as you type.
                   </p>
                 </div>
 
-                <div className="p-5 bg-black border border-gray-700 rounded-lg">
-                  <Rocket className="h-7 w-7 text-indigo-700 mb-4" />
+                <div className="rounded-lg border border-gray-600 bg-black p-5 shadow-[0_0_100px_rgba(64,46,207,0.2)]">
+                  <Rocket className="mb-4 h-7 w-7 text-indigo-700" />
                   <h3 className="text-lg font-medium">Instant Deploys</h3>
                   <p className="text-base text-gray-300">
                     One-click preview links so you can ship faster and gather feedback early.
@@ -116,5 +124,5 @@ export default function Home() {
         <ScrollFade />
       </div>
     </LandingPageBackground>
-  )
+  );
 }

@@ -45,7 +45,7 @@
   
   /* Tertiary path - steady uptrend */
   .pathTertiary {
-    stroke: rgba(65, 46, 207, 0.43); /* Pink */
+    stroke: rgba(65, 46, 207, 0.53); /* Pink */
     filter: drop-shadow(0 0 6px #21471a);
     stroke-width: 3;
     opacity: 0.5;
