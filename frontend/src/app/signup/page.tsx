@@ -1,29 +1,61 @@
-"use client";
+'use client';
 
-import React from "react";
-import Header from "@/components/header";
-import SlideUp from "@/components/slide-up";
-import PrimaryBackground from "@/components/primary-background";
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Header from '@/components/header';
+import SlideUp from '@/components/slide-up';
+import PrimaryBackground from '@/components/primary-background';
 
 export default function SignupPage() {
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+
+  // send the form data to your Express API
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/signup`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (res.ok) {
+      const { token } = await res.json();
+      localStorage.setItem('token', token); // simple token storage
+      router.push('/');                     // go to home or dashboard
+    } else {
+      const { errors, message } = await res.json();
+      setError(message || errors?.[0]?.msg || 'Signup failed');
+    }
+  };
+
   return (
     <PrimaryBackground>
       <div className="flex min-h-screen flex-col items-center justify-center p-4 text-white">
         <Header />
 
         <SlideUp>
-          {/* Card */}
           <div className="w-full max-w-md space-y-8">
             {/* Heading */}
             <div className="text-center space-y-2">
-              <h1 className="text-4xl font-semibold tracking-tight">Sign Up</h1>
+              <h1 className="text-4xl font-semibold tracking-tight">
+                Sign Up
+              </h1>
               <p className="text-md text-gray-400">
                 Create your OpenCoding account.
               </p>
             </div>
 
             {/* Form */}
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* First Name */}
               <div className="space-y-2">
                 <label
@@ -128,9 +160,13 @@ export default function SignupPage() {
               </button>
             </form>
 
+            {error && (
+              <p className="text-center text-sm text-red-500">{error}</p>
+            )}
+
             {/* Footer link */}
             <p className="text-center text-base text-gray-400">
-              Already a member?{" "}
+              Already a member?{' '}
               <a
                 href="/login"
                 className="font-semibold text-indigo-700 hover:text-indigo-800"

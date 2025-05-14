@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 const SALT_ROUNDS = 10;
 
 // POST /auth/signup
-outer.post(
+router.post(
   '/signup',
   [
     body('firstName')
