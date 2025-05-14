@@ -1,21 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import React from "react"
 
-interface ScrollFadeProps {
-  children: React.ReactNode
-  start?: number      // scrollY at which fading starts
-  end?: number        // scrollY at which it's fully gone
-  maxOffset?: number  // max upward movement in px
-}
-
-export default function ScrollFade({
-  children,
-  start = 0,
-  end = 300,
-  maxOffset = 60,
-}: ScrollFadeProps) {
+export default function ScrollFade() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -24,19 +10,21 @@ export default function ScrollFade({
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const progress = Math.min(Math.max((scrollY - start) / (end - start), 0), 1)
-  const opacity = 1 - progress
-  const translateY = progress * maxOffset
+  const progress = Math.min(scrollY / 200, 1) // adjust 200 to control fade length
+  const opacity = progress * 1
 
   return (
-    <motion.div
+    <div
       style={{
-        opacity,
-        transform: `translateY(-${translateY}px)`,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: "300px", // makes fade more gradual
+        pointerEvents: "none",
+        background: `linear-gradient(to bottom, rgba(0,0,0,${opacity}) 0%, transparent 100%)`,
+        zIndex: 40,
       }}
-      className="transition-all duration-300 ease-out will-change-transform"
-    >
-      {children}
-    </motion.div>
+    />
   )
 }

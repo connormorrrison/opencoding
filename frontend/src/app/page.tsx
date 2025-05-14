@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import LandingPageBackground from "@/components/landing-page-background"
 import Header from "@/components/header"
 import SlideUp from "@/components/slide-up"
+import ScrollFade from "@/components/scroll-fade"
 import { Users, Brain, Rocket } from "lucide-react"
 import { Faq1 } from "@/components/faq1"
 
@@ -45,7 +46,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
               <div className="max-w-2xl text-center space-y-4">
-                <div className="text-6xl font-medium leading-tight">
+                <div className="text-6xl font-medium leading-tight drop-shadow-lg">
                   <div className="whitespace-nowrap h-[72px]">
                     <AnimatePresence mode="wait">
                       <motion.span
@@ -110,6 +111,9 @@ export default function Home() {
 
         {/* FAQ Section */}
         <Faq1 />
+
+        {/* Blur overlay */}
+        <ScrollFade />
       </div>
     </LandingPageBackground>
   )

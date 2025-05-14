@@ -12,9 +12,6 @@ export default function RootLayout({
         <main>
           {children}
         </main>
-        <footer className="text-center py-5 text-gray-300 text-base">
-          © {new Date().getFullYear()} OpenCoding. All rights reserved.
-        </footer>
       </body>
     </html>
   );
