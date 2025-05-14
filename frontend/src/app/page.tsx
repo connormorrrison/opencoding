@@ -24,6 +24,7 @@ const WORDS = [
 
 export default function Home() {
   const [index, setIndex] = useState(0);
+  const [showDemo, setShowDemo] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % WORDS.length), 3000);
@@ -32,19 +33,22 @@ export default function Home() {
 
   return (
     <LandingPageBackground>
-      <div className="relative min-h-screen text-white">
+      {/* blur this entire wrapper when the demo is open */}
+      <div className={`relative min-h-screen text-white ${showDemo ? "blur-lg" : ""}`}>
         {/* Header */}
-        <div className="fixed inset-x-0 top-0 z-50">
+        <div className="fixed inset-x-0 top-0 z-40">
           <Header />
         </div>
 
         {/* Auth links */}
-        <div className="fixed right-5 top-5 z-50 flex space-x-4">
+        <div className="fixed right-5 top-5 z-40 flex space-x-4">
           <Link href="/login">
             <Button className="text-base">Log In</Button>
           </Link>
           <Link href="/signup">
-            <Button className="bg-indigo-700 text-base hover:bg-indigo-800">Sign Up</Button>
+            <Button className="bg-indigo-700 text-base hover:bg-indigo-800">
+              Sign Up
+            </Button>
           </Link>
         </div>
 
@@ -83,7 +87,10 @@ export default function Home() {
                       Get Started
                     </Button>
                   </Link>
-                  <Button className="border-gray-300 text-base text-white hover:text-gray-300">
+                  <Button
+                    onClick={() => setShowDemo(true)}
+                    className="border-gray-300 text-base text-white hover:text-gray-300"
+                  >
                     Watch Demo
                   </Button>
                 </div>
@@ -122,9 +129,39 @@ export default function Home() {
         {/* FAQ Section */}
         <Faq1 />
 
-        {/* Blur overlay */}
+        {/* optional scroll fade at bottom */}
         <ScrollFade />
       </div>
+
+      {/* modal overlay + video (not blurred) */}
+      {showDemo && (
+        <>
+          <style jsx global>{`
+            body {
+              overflow: hidden;
+            }
+          `}</style>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+            <div className="relative w-full max-w-4xl px-4">
+              <button
+                onClick={() => setShowDemo(false)}
+                className="absolute -right-2 -top-10 h-10 w-10 rounded-full bg-gray-800 text-white"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <div className="overflow-hidden rounded-lg shadow-2xl">
+                <video
+                  controls
+                  autoPlay
+                  className="aspect-video w-full"
+                  src="/demo-stock.mp4"
+                />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </LandingPageBackground>
   );
 }
