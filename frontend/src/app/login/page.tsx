@@ -1,9 +1,10 @@
-"use client";
+// LoginPage.tsx
+'use client';
 
-import React from "react";
-import Header from "@/components/header";
-import SlideUp from "@/components/slide-up";
-import PrimaryBackground from "@/components/primary-background";
+import React from 'react';
+import Header from '@/components/header';
+import SlideUp from '@/components/slide-up';
+import PrimaryBackground from '@/components/primary-background';
 
 export default function LoginPage() {
   return (
@@ -12,7 +13,6 @@ export default function LoginPage() {
         <Header />
 
         <SlideUp>
-          {/* Card */}
           <div className="w-full max-w-md space-y-8">
             {/* Heading */}
             <div className="text-center space-y-2">
@@ -24,13 +24,12 @@ export default function LoginPage() {
 
             {/* Form */}
             <form className="space-y-6">
-              {/* Email */}
               <div className="space-y-2">
                 <label
                   htmlFor="email"
                   className="block text-base font-medium text-gray-300"
                 >
-                  Email*
+                  Email
                 </label>
                 <input
                   id="email"
@@ -43,13 +42,12 @@ export default function LoginPage() {
                 />
               </div>
 
-              {/* Password */}
               <div className="space-y-2">
                 <label
                   htmlFor="password"
                   className="block text-base font-medium text-gray-300"
                 >
-                  Password*
+                  Password
                 </label>
                 <input
                   id="password"
@@ -62,7 +60,6 @@ export default function LoginPage() {
                 />
               </div>
 
-              {/* Remember + Forgot */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <input
@@ -86,7 +83,6 @@ export default function LoginPage() {
                 </a>
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 className="w-full rounded-md bg-indigo-700 py-3 text-base font-semibold shadow-sm hover:bg-indigo-800"
@@ -95,9 +91,8 @@ export default function LoginPage() {
               </button>
             </form>
 
-            {/* Footer link */}
             <p className="text-center text-base text-gray-400">
-              Not a member?{" "}
+              Not a member?{' '}
               <a
                 href="/signup"
                 className="font-semibold text-indigo-700 hover:text-indigo-800"
