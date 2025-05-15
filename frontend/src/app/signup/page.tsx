@@ -1,4 +1,3 @@
-// SignupPage.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -19,16 +18,20 @@ export default function SignupPage() {
     setError(null);
 
     const data = Object.fromEntries(new FormData(e.currentTarget));
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/signup`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }
+    );
 
     if (res.ok) {
       const { token } = await res.json();
       localStorage.setItem('token', token);
-      router.push('/');
+      router.push('/home');
     } else {
       const { errors, message } = await res.json();
       setError(message || errors?.[0]?.msg || 'Signup failed');
@@ -55,11 +58,9 @@ export default function SignupPage() {
 
             {/* Form */}
             <form className="space-y-6" onSubmit={handleSubmit}>
+              {/* First Name */}
               <div className="space-y-2">
-                <label
-                  htmlFor="firstName"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="firstName" className="block text-base font-medium text-gray-300">
                   First Name*
                 </label>
                 <input
@@ -73,11 +74,9 @@ export default function SignupPage() {
                 />
               </div>
 
+              {/* Last Name */}
               <div className="space-y-2">
-                <label
-                  htmlFor="lastName"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="lastName" className="block text-base font-medium text-gray-300">
                   Last Name*
                 </label>
                 <input
@@ -91,11 +90,9 @@ export default function SignupPage() {
                 />
               </div>
 
+              {/* Email */}
               <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="email" className="block text-base font-medium text-gray-300">
                   Email*
                 </label>
                 <input
@@ -109,11 +106,9 @@ export default function SignupPage() {
                 />
               </div>
 
+              {/* Password */}
               <div className="space-y-2">
-                <label
-                  htmlFor="password"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="password" className="block text-base font-medium text-gray-300">
                   Password*
                 </label>
                 <div className="relative">
@@ -136,11 +131,9 @@ export default function SignupPage() {
                 </div>
               </div>
 
+              {/* Confirm Password */}
               <div className="space-y-2">
-                <label
-                  htmlFor="confirmPassword"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="confirmPassword" className="block text-base font-medium text-gray-300">
                   Confirm Password*
                 </label>
                 <div className="relative">
@@ -163,6 +156,7 @@ export default function SignupPage() {
                 </div>
               </div>
 
+              {/* Submit */}
               <button
                 type="submit"
                 className="w-full rounded-md bg-indigo-700 py-3 text-base font-semibold shadow-sm hover:bg-indigo-800"
@@ -171,16 +165,11 @@ export default function SignupPage() {
               </button>
             </form>
 
-            {error && (
-              <p className="text-center text-sm text-red-500">{error}</p>
-            )}
+            {error && <p className="text-center text-sm text-red-500">{error}</p>}
 
             <p className="text-center text-base text-gray-400">
               Already a member?{' '}
-              <a
-                href="/login"
-                className="font-semibold text-indigo-700 hover:text-indigo-800"
-              >
+              <a href="/login" className="font-semibold text-indigo-700 hover:text-indigo-800">
                 Log in
               </a>
             </p>
