@@ -9,7 +9,7 @@ import Header from "@/components/header";
 import SlideUp from "@/components/slide-up";
 import ScrollFade from "@/components/scroll-fade";
 import { Users, Brain, Rocket } from "lucide-react";
-import { Faq1 } from "@/components/faq1";
+import { Faq1 } from "@/components/faq";
 
 const WORDS = [
   "Collaborate",
@@ -43,10 +43,10 @@ export default function Home() {
         {/* Auth links */}
         <div className="fixed right-5 top-5 z-40 flex space-x-4">
           <Link href="/login">
-            <Button className="text-base">Log In</Button>
+            <Button variant="secondary" className="text-base">Log In</Button>
           </Link>
           <Link href="/signup">
-            <Button className="bg-indigo-700 text-base hover:bg-indigo-800">
+            <Button className="bg-indigo-700 text-white text-base hover:bg-indigo-800">
               Sign Up
             </Button>
           </Link>
@@ -83,11 +83,12 @@ export default function Home() {
 
                 <div className="mt-4 flex justify-center space-x-4">
                   <Link href="/signup">
-                    <Button className="bg-indigo-700 text-base hover:bg-indigo-800">
+                    <Button className="bg-indigo-700 text-white text-base hover:bg-indigo-800">
                       Get Started
                     </Button>
                   </Link>
                   <Button
+                    variant="secondary"
                     onClick={() => setShowDemo(true)}
                     className="border-gray-300 text-base text-white hover:text-gray-300"
                   >
