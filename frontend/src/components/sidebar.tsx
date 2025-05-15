@@ -1,58 +1,50 @@
 // src/components/sidebar.tsx
-
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
+import { Home, SquareTerminal, LayoutGrid, Rocket, Settings } from 'lucide-react'
 
 export default function Sidebar() {
   const [isPinned, setIsPinned] = useState(true)
   const [isVisible, setIsVisible] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
-  // Ref to sidebar container (not strictly needed here but kept for consistency)
   const sidebarRef = useRef<HTMLDivElement>(null)
-
-  // Distance threshold in px for hover-trigger
   const HOVER_THRESHOLD = 200
 
-  const menuItems = [
-    { name: 'Home',      path: '/'        },
-    { name: 'Editor',     path: '/about'   },
-    { name: 'Projects',  path: '/projects'},
-    { name: 'Deploy',      path: '/blog'    },
-    { name: 'Settings', path: '/curations'    },
+  const menuItems: {
+    name: string
+    path: string
+    icon: React.ComponentType<{ className?: string }>
+  }[] = [
+    { name: 'Home',     path: '/',          icon: Home     },
+    { name: 'Editor',   path: '/about',     icon: SquareTerminal    },
+    { name: 'Projects', path: '/projects',  icon: LayoutGrid   },
+    { name: 'Deploy',   path: '/blog',      icon: Rocket   },
+    { name: 'Settings', path: '/curations', icon: Settings },
   ]
 
-  // Toggle pinned state on click (ignoring clicks on links or the theme toggle)
   const handleSidebarClick = (e: React.MouseEvent) => {
     if (
       (e.target as HTMLElement).tagName !== 'A' &&
       !e.currentTarget.querySelector('.theme-toggle')?.contains(e.target as Node)
     ) {
       setIsPinned(!isPinned)
-      if (isPinned && !isHovered) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
+      setIsVisible(isPinned || isHovered)
     }
   }
 
-  // Show/hide on hover when unpinned, using the updated threshold
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const onMouseMove = (e: MouseEvent) => {
       if (!isPinned) {
-        const isNearLeftEdge = e.clientX <= HOVER_THRESHOLD
-        setIsHovered(isNearLeftEdge)
-        setIsVisible(isNearLeftEdge)
+        const nearEdge = e.clientX <= HOVER_THRESHOLD
+        setIsHovered(nearEdge)
+        setIsVisible(nearEdge)
       }
     }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
+    window.addEventListener('mousemove', onMouseMove)
+    return () => window.removeEventListener('mousemove', onMouseMove)
   }, [isPinned])
 
   return (
@@ -61,32 +53,30 @@ export default function Sidebar() {
         onClick={handleSidebarClick}
         className={`
           fixed top-24 left-8 bottom-8
-          flex flex-col 
-          w-48 
-          p-5 
-          rounded-lg 
-          hover:shadow-[0_0_300px_rgba(64,46,207,0.2)] 
-          transition-all duration-300 
+          flex flex-col w-48 p-5 rounded-lg
+          shadow-[0_0_300px_rgba(64,46,207,0.2)]
+          transition-all duration-300
           ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}
         `}
       >
-
-        {/* Navigation */}
-        <nav className="flex-2">
+        <nav className="flex-1">
           <ul className="space-y-2">
-            {menuItems.map(item => (
-              <li key={item.name}>
-                <Link
-                  href={item.path}
-                  className="block px-2 py-2 rounded-lg text-base text-white font-normal hover:text-indigo-500 hover:bg-indigo-800/30"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map(item => {
+              const Icon = item.icon
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.path}
+                    className="flex items-center px-2 py-2 rounded-lg text-base font-normal hover:text-indigo-500 hover:bg-indigo-800/30"
+                  >
+                    <Icon className="size-5" />
+                    <span className="ml-6">{item.name}</span>
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
-
       </Card>
     </div>
   )
