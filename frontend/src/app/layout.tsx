@@ -1,7 +1,7 @@
-// app/layout.tsx
 import "./globals.css"
 import { ReactNode } from "react"
 import SidebarWrapper from "./sidebar"
+import { ThemeProvider } from "next-themes"
 
 export default function RootLayout({
   children,
@@ -9,11 +9,13 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="h-full bg-black text-white">
-        <SidebarWrapper>
-          {children}
-        </SidebarWrapper>
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className="h-full bg-background text-foreground transition-colors">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SidebarWrapper>
+            {children}
+          </SidebarWrapper>
+        </ThemeProvider>
       </body>
     </html>
   )
