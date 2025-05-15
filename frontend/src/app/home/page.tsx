@@ -3,7 +3,7 @@
 import React from "react";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
-import Profile from "@/components/Profile";
+import Profile from "@/components/profile";
 
 export default function HomePage() {
   return (

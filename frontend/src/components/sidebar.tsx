@@ -49,6 +49,7 @@ export default function Sidebar() {
 
   return (
     <div ref={sidebarRef} className="relative h-full">
+      {/* main sidebar card */}
       <Card
         onClick={handleSidebarClick}
         className={`
@@ -77,6 +78,18 @@ export default function Sidebar() {
             })}
           </ul>
         </nav>
+      </Card>
+
+      {/* new large card spanning to the right edge */}
+      <Card
+        className="
+          fixed top-24 left-64 right-8 bottom-8
+          p-5 rounded-lg
+          transition-all duration-300
+          opacity-100
+        "
+      >
+        {/* your content goes here */}
       </Card>
     </div>
   )
