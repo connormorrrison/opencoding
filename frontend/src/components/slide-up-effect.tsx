@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-export default function SlideUp({ children }: { children: React.ReactNode }) {
+export default function SlideUpEffect({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

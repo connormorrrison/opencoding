@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import LandingPageBackground from "@/components/landing-page-background";
 import Header from "@/components/header";
-import SlideUp from "@/components/slide-up";
-import ScrollFade from "@/components/scroll-fade";
+import SlideUpEffect from "@/components/slide-up-effect";
+import ScrollFadeEffect from "@/components/scroll-fade-effect";
 import { Users, Brain, Rocket } from "lucide-react";
 import { Faq1 } from "@/components/faq";
 
@@ -54,7 +54,7 @@ export default function Home() {
 
         {/* Page content */}
         <main className="flex-1 pt-60">
-          <SlideUp>
+          <SlideUpEffect>
             <div className="flex flex-col items-center space-y-12 px-6">
               {/* Hero */}
               <div className="max-w-2xl space-y-4 text-center">
@@ -124,14 +124,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </SlideUp>
+          </SlideUpEffect>
         </main>
 
         {/* FAQ Section */}
         <Faq1 />
 
         {/* optional scroll fade at bottom */}
-        <ScrollFade />
+        <ScrollFadeEffect />
       </div>
 
       {/* modal overlay + video (not blurred) */}

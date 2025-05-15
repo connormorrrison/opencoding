@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 
-export default function ScrollFade() {
+export default function ScrollFadeEffect() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {

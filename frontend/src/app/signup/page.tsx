@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
-import SlideUp from '@/components/slide-up';
+import SlideUpEffect from '@/components/slide-up-effect';
 import PrimaryBackground from '@/components/primary-background';
 import { Eye, EyeOff } from 'lucide-react';
 
@@ -46,7 +46,7 @@ export default function SignupPage() {
       <div className="flex min-h-screen flex-col items-center justify-center p-4 text-white">
         <Header />
 
-        <SlideUp>
+        <SlideUpEffect>
           <div className="w-full max-w-md space-y-8">
             {/* Heading */}
             <div className="text-center space-y-2">
@@ -174,7 +174,7 @@ export default function SignupPage() {
               </a>
             </p>
           </div>
-        </SlideUp>
+        </SlideUpEffect>
       </div>
     </PrimaryBackground>
   );
