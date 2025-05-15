@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import * as React from "react"
 import {
@@ -12,7 +12,6 @@ import {
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -32,66 +31,28 @@ const data = {
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
-    {
-      title: "Home",
-      url: "#",
-      icon: Home,
-      isActive: true
-    },
-    {
-      title: "Editor",
-      url: "#",
-      icon: SquareTerminal
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: LayoutGrid
-    },
-    {
-      title: "Deploy",
-      url: "#",
-      icon: Rocket
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings
-    },
+    { title: "Home",     url: "/home", icon: Home,           isActive: true },
+    { title: "Editor",   url: "/editor", icon: SquareTerminal          },
+    { title: "Projects", url: "/projects", icon: LayoutGrid              },
+    { title: "Deploy",   url: "/deploy", icon: Rocket                  },
+    { title: "Settings", url: "/settings", icon: Settings                },
   ],
   navSecondary: [
-    {
-      title: "Report an issue",
-      url: "#",
-      icon: MessageCircleWarning,
-    },
-  ]
+    { title: "Report an issue", url: "#", icon: MessageCircleWarning },
+  ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar variant="inset" {...props}>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarHeader>
+      {/* SidebarHeader is left empty now that “Acme Inc” is removed */}
+      <SidebarHeader />
+
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
+
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
