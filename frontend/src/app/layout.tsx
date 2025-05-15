@@ -1,18 +1,20 @@
-import "./globals.css";
-import { ReactNode } from "react";
+// app/layout.tsx
+import "./globals.css"
+import { ReactNode } from "react"
+import SidebarWrapper from "./sidebar"
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: ReactNode
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="flex flex-col min-h-screen bg-black text-white">
-        <main>
+      <body className="h-full bg-black text-white">
+        <SidebarWrapper>
           {children}
-        </main>
+        </SidebarWrapper>
       </body>
     </html>
-  );
+  )
 }
