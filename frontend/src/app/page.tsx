@@ -41,7 +41,7 @@ export default function Home() {
         </div>
 
         {/* Auth links */}
-        <div className="fixed right-5 top-5 z-40 flex space-x-4">
+        <div className="fixed right-7 top-7 z-40 flex space-x-5">
           <Link href="/login">
             <Button variant="secondary" className="text-base">Log In</Button>
           </Link>
@@ -72,16 +72,16 @@ export default function Home() {
                         {WORDS[index]}
                       </motion.span>
                     </AnimatePresence>{" "}
-                    in Real-Time
+                    in Real Time
                   </div>
                   <div className="mt-4">with AI</div>
                 </div>
 
                 <p className="mt-6 text-base text-gray-100">
-                  Build software together and get AI-powered insights while you code.
+                  Build software together in sync and get AI-powered insights while you code.
                 </p>
 
-                <div className="mt-4 flex justify-center space-x-4">
+                <div className="mt-4 flex justify-center space-x-5">
                   <Link href="/signup">
                     <Button className="bg-indigo-700 text-white text-base hover:bg-indigo-800">
                       Get Started
