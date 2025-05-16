@@ -12,7 +12,7 @@ export default function PrimaryBackground({
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(64,46,207,0.2) 0%, transparent 50%)",
+            "radial-gradient(circle at center, rgba(64,46,207,0.2) 0%, transparent 200%)",
         }}
       />
       {children}

@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   overflow: hidden;
-  z-index: 0;          /* ← was -1 */
+  z-index: -1;          /* ← was -1 */
   background: #000;
   pointer-events: none; /* keeps it non-interactive */
 }

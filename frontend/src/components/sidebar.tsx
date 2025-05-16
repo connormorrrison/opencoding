@@ -10,6 +10,7 @@ import {
   LayoutGrid,
   Rocket,
   Settings,
+  MoveUpLeft
 } from "lucide-react"
 
 export default function Sidebar() {
@@ -27,50 +28,33 @@ export default function Sidebar() {
 
   return (
     <div className="relative h-full">
-      {/* sidebar */}
+      {/* sidebar card */}
       <Card
         onClick={togglePinned}
         className={`
-          fixed top-24 left-8 bottom-8 flex flex-col
-          transition-all duration-300
+          fixed top-24 left-8 bottom-8 flex flex-col bg-black
+          transition-all ease-in-out duration-200
           ${isPinned ? "w-48 p-5" : "w-20 p-5 pr-3"}
-          rounded-lg
+          rounded-3xl
         `}
       >
-        <nav className="flex-1">
-          <ul className="space-y-2">
-            {menuItems.map(item => {
-              const Icon = item.icon
-              return (
-                <li key={item.name}>
-                  <Link
-                    href={item.path}
-                    className="
-                      flex items-center px-2 py-2
-                      rounded-lg text-base font-normal
-                      hover:text-indigo-500 hover:bg-indigo-800/30
-                    "
-                  >
-                    <Icon className="size-6" />
-                    {isPinned && <span className="ml-6">{item.name}</span>}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+        {/* … */}
       </Card>
-
-      {/* content card */}
-      <Card
+  
+      {/* content-card wrapper handles fixed positioning */}
+      <div
         className={`
-          fixed top-24 bottom-8 right-8 p-5 rounded-lg
-          transition-all duration-300
-          ${isPinned ? "left-64" : "left-36"}
+          fixed top-24 bottom-8 right-8
+          transition-all ease-in-out duration-200
+          ${isPinned ? "left-60" : "left-32"}
         `}
       >
-        {/* your content goes here */}
-      </Card>
+        {/* Card itself is relative so the arrow can position against it */}
+        <Card className="relative h-full p-5 rounded-3xl bg-black">
+          <MoveUpLeft className="absolute top-6 left-6" size={24} />
+          {/* your content goes here */}
+        </Card>
+      </div>
     </div>
   )
 }
